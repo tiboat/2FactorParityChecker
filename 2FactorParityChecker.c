@@ -16,11 +16,11 @@
 "\nUsage: ./2FactorParityChecker [-l# -n# -N#] [-H -s] [-p | -f | -F] [-h]\n\n"
 
 #define HELPTEXT \
-"Checks if cubic biparite graphs are pseudo 2-factor isomorphic or 2-factor hamiltonian.\n\
+"Checks if cubic bipartite graphs are pseudo 2-factor isomorphic or 2-factor hamiltonian.\n\
 It reads these cubic graphs in graph6 or sparse6 format from stdin. Input graphs\n\
 needs to be cubic, but need not be bipartite; non-bipartite graphs are filtered out.\n\
 Output is sent to stdout; error messages are sent to stderr. This \n\
-implementation uses parallelisation using openmp, so make sure it is \n\
+implementation uses parallellisation from openmp, so make sure it is \n\
 installed.\n\
 \n\
 Underneath are the optional arguments.\n\

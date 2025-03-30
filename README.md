@@ -27,11 +27,11 @@ This helptext can be found by executing `./2FactorParityChecker -h`.
 Usage: `./2FactorParityChecker [-l# -n# -N#] [-H -s] [-p | -f | -F] [-h]`
 
 
-Checks if cubic biparite graphs are pseudo 2-factor isomorphic or 2-factor hamiltonian.
+Checks if cubic bipartite graphs are pseudo 2-factor isomorphic or 2-factor hamiltonian.
 It reads these cubic graphs in graph6 or sparse6 format from stdin. Input graphs
 needs to be cubic, but need not be bipartite; non-bipartite graphs are filtered out.
 Output is sent to stdout; error messages are sent to stderr. This
-implementation uses parallelisation using openmp, so make sure it is
+implementation uses parallellisation from openmp, so make sure it is
 installed.
 
 Underneath are the optional arguments.
