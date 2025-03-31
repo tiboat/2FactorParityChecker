@@ -4,6 +4,8 @@ This repository contains code and data related to the manuscript "TODO". This co
 
 ## Data
 
+### Gray graph
+
 In the directory `data/grayGraph` one can find data related to the Gray graph, which is pseudo 2-factor isomorphic.
 
 - `adjacency_list.txt` contains the adjacency list of the Gray graph.
@@ -11,6 +13,15 @@ In the directory `data/grayGraph` one can find data related to the Gray graph, w
 - `2-factors.txt` lists the 2-factors of the Gray graph.
 - `2-factor_sizes.txt` lists the different sizes of the 2-factors of the Gray graph.
 - `perfect_matchings.txt` lists the perfect matchings of the Gray graph.
+
+### Graph lists
+
+The following lists of cubic graphs were checked for the manuscript.
+
+- Cubic arc-transitive graphs up to 10 000 vertices, available [here](https://github.com/tiboat/biregGirthGraphs/tree/main/regToBireg/graph_lists).
+- Cubic semi-symmetric graphs up to 10 000 vertices, available [here](https://github.com/tiboat/biregGirthGraphs/tree/main/regToBireg/graph_lists).
+- Cubic vertex-transitive graphs up to 1 280 vertices, available [here](https://github.com/kguo-sagecode/cubic-vertextransitive-graphs).
+- Cubic Cayley graphs up to 5 000 vertices, available [here](https://graphsym.net/). 
 
 ## Code
 
@@ -31,7 +42,7 @@ Checks if cubic bipartite graphs are pseudo 2-factor isomorphic or 2-factor hami
 It reads these cubic graphs in graph6 or sparse6 format from stdin. Input graphs
 needs to be cubic, but need not be bipartite; non-bipartite graphs are filtered out.
 Output is sent to stdout; error messages are sent to stderr. This
-implementation uses parallellisation from openmp, so make sure it is
+implementation uses parallellization using openmp, so make sure it is
 installed.
 
 Underneath are the optional arguments.
