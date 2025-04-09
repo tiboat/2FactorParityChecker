@@ -368,7 +368,7 @@ int enumMatchings(graph *g, int * col_ids, int * col_ptrs, int numVertices, unsi
             row_match[i] = -1;
 
         // matching id = 1 -> DFS
-        // cheap id = 5 -> randomized Karp-Sipser
+        // cheap id = 3 -> randomized Karp-Sipser
         matching(col_ptrs, col_ids, match, row_match, numVertices/2, numVertices/2,
          1, 3, 1.0);
         (*matching_count)++;
