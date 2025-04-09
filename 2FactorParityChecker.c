@@ -67,7 +67,7 @@ bool printPerfMatchings = false;
 bool print2Factors = false;
 bool print2FactorSizes = false;
 
-#define NUMIDS 4
+#define NUMIDS 3
 
 
 // Assumes graph is 3-edge-connected.
