@@ -367,10 +367,10 @@ int enumMatchings(graph *g, int * col_ids, int * col_ptrs, int numVertices, unsi
         for(int i=0; i<numVertices/2; i++)
             row_match[i] = -1;
 
-        int matching_id = randIntBetween(1,10);
-        int cheap_id = randIntBetween(1,5);
+        // matching id = 1 -> DFS
+        // cheap id = 5 -> randomized Karp-Sipser
         matching(col_ptrs, col_ids, match, row_match, numVertices/2, numVertices/2,
-         matching_id, cheap_id, 1.0);
+         1, 3, 1.0);
         (*matching_count)++;
 
         if (hamiltonian) {
