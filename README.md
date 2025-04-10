@@ -1,6 +1,6 @@
 # 2-factor parity checker
 
-This repository contains code and data related to the manuscript "TODO". This code allows to check cubic bipartite graphs on being pseudo 2-factor isomorphic or 2-factor hamiltonian.
+This repository contains code and data related to the manuscript "TODO". This code allows to check cubic bipartite graphs on being pseudo 2-factor isomorphic or 2-factor hamiltonian. It also contains code to generate all lifts of the Gray graph using the group $(\mathbb{Z}_3, +)$ in the directory `liftsGrayGraph`.
 
 ## Data
 
@@ -25,14 +25,16 @@ The following lists of cubic graphs were checked for the manuscript.
 
 ## Code
 
-### Compilation
+### 2FactorParityChecker
+
+#### Compilation
 Compile with the make command.
 
 ```
 make
 ```
 
-### Execution
+#### Execution
 This helptext can be found by executing `./2FactorParityChecker -h`.
 
 Usage: `./2FactorParityChecker [-l# -n# -N#] [-H -s] [-p | -f | -F] [-h]`
@@ -78,6 +80,28 @@ Underneath are the optional arguments.
         prints the sizes of the 2-factors of the graph
 
 
+### genAllLiftsOfGrayGraph
+
+In the directory `liftsGrayGraph` one can find code to generate all lifts of the Gray graph that have girth at least 10 with the group $(\mathbb{Z}_3, +)$.
+
+#### Compilation
+
+Compile with the following command in the directory `liftsGrayGraph`.
+
+```
+g++ -g -std=c++11 -O3 genAllLiftsOfGrayGraph.cpp -o genAllLiftsOfGrayGraphExecutable
+```
+
+##### Execution
+
+To execute, run the following command in the directory `liftsGrayGraph`.
+
+```
+./genAllLiftsOfGrayGraphExecutable 10 < groupZ3.txt 
+```
+
+The file `groupZ3.txt` contains data of the group $(\mathbb{Z}_3, +)$, used by `genAllLiftsOfGrayGraphExecutable`. The argument `10` indicates to only generate lifts of girth at least 10. For each lift found, satisfying the girth condition, an adjacency matrix is printed to stdout.
+
 
 
 ## Resources
@@ -89,8 +113,7 @@ Parts of the code are taken from or based on the following resources.
 - [faultCost](https://github.com/JarneRenders/faultCost/): used the same style of flags given to the executable.
 
 
-## Author
+## Authors
 
-Tibo Van den Eede
-
-E-mail: tibo [dot] vandeneede [at] kuleuven [dot] be
+- Jorik Jooken, jorik [dot] jooken [at] kuleuven [dot] be
+- Tibo Van den Eede, tibo [dot] vandeneede [at] kuleuven [dot] be

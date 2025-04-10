@@ -5,6 +5,10 @@
 #include <stdbool.h>
 #include "../nauty/nauty.h"
 
+
+// Author: Tibo Van den Eede
+
+
 #define REMOVEONEEDGE(g,i,j,macromaxm)\
 DELELEMENT(GRAPHROW(g,i,macromaxm),j); DELELEMENT(GRAPHROW(g,j,macromaxm),i)
 
