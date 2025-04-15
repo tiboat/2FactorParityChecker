@@ -242,7 +242,7 @@ bool haveSameParity(graph *g, int numVertices) {
         int allSameParityArr[NUMIDS] = { -2 };
         int idxResultParity = -1;
 
-        #pragma omp parallel shared(done)
+        #pragma omp parallel shared(done) num_threads(NUMIDS)
         {
             #pragma omp for
             for (int i = 0; i < NUMIDS; i++) {

@@ -1,6 +1,6 @@
 # 2-factor parity checker
 
-This repository contains code and data related to the manuscript "TODO". This code allows to check cubic bipartite graphs on being pseudo 2-factor isomorphic or 2-factor hamiltonian. It also contains code to generate all lifts of the Gray graph using the group $(\mathbb{Z}_3, +)$ in the directory `liftsGrayGraph`.
+This repository contains code and data related to the manuscript "TODO". This code allows to check cubic bipartite graphs on being pseudo 2-factor isomorphic or 2-factor hamiltonian. It also contains code to generate all lifts of the Gray graph using the group $(\mathbb{Z}_3, +)$ and all lifts of the Theta graph using the group $(\mathbb{Z}_{15}, +)$ in the directory `genLifts`.
 
 ## Data
 
@@ -80,27 +80,63 @@ Underneath are the optional arguments.
         prints the sizes of the 2-factors of the graph
 
 
-### genAllLiftsOfGrayGraph
+### genLifts
 
-In the directory `liftsGrayGraph` one can find code to generate all lifts of the Gray graph that have girth at least 10 with the group $(\mathbb{Z}_3, +)$.
+In the directory `genLifts` one can find code to generate all lifts with a minimum girth of 
+- the Gray graph with the group $(\mathbb{Z}_3, +)$ and
+- the Theta graph with the group $(\mathbb{Z}_{15}, +)$.
+
+We provide two independent implementations, one written in C++, the other one written in Python. We tested that the C++ implementation and Python implementation obtain the same set of non-isomorphic graph lifts for the Gray graph with girth at least 10 and the Theta graph with girth at least 6.
+
+### C++
 
 #### Compilation
 
-Compile with the following command in the directory `liftsGrayGraph`.
+Compile with the following two commands in the directory `genLifts`.
 
 ```
-g++ -g -std=c++11 -O3 genAllLiftsOfGrayGraph.cpp -o genAllLiftsOfGrayGraphExecutable
+g++ -g -std=c++11 -O3 genAllLiftsGray.cpp -o genAllLiftsGrayExecutable
+g++ -g -std=c++11 -O3 genAllLiftsTheta.cpp -o genAllLiftsThetaExecutable
 ```
 
-##### Execution
+#### Execution
 
-To execute, run the following command in the directory `liftsGrayGraph`.
+To obtain the lifts of the Gray graph of girth at least 10 (for instance), run the following command in the directory `genLifts`.
 
 ```
-./genAllLiftsOfGrayGraphExecutable 10 < groupZ3.txt 
+./genAllLiftsGrayExecutable 10 < groupZ3.txt 
 ```
 
-The file `groupZ3.txt` contains data of the group $(\mathbb{Z}_3, +)$, used by `genAllLiftsOfGrayGraphExecutable`. The argument `10` indicates to only generate lifts of girth at least 10. For each lift found, satisfying the girth condition, an adjacency matrix is printed to stdout.
+To obtain the lifts of the Theta graph of girth at least 6 (for instance), run the following command in the directory `genLifts`.
+
+```
+./genAllLiftsThetaExecutable 6 < groupZ3.txt
+```
+
+The files `groupZ3.txt` and `groupZ15.txt` contain data of the groups $(\mathbb{Z}_3, +)$ and $(\mathbb{Z}_{15}, +)$, respectively. For each lift found, satisfying the girth condition, an adjacency matrix is printed to stdout. Note that the program does not perform isomorphism rejection, so there can be isomorphic graphs in the output.
+
+***
+
+### Python
+
+
+Requires no compilation
+
+#### Execution
+
+To obtain the lifts of the Gray graph of girth at least 10 (for instance), run the following command in the directory `genLifts`.
+
+```
+python genAllLiftsGrayOrTheta.py --graph-type gray --min-girth 10
+```
+
+To obtain the lifts of the Theta graph of girth at least 6 (for instance), run the following command in the directory `genLifts`.
+
+```
+python genAllLiftsGrayOrTheta.py --graph-type theta --min-girth 6
+```
+
+For each lift found, satisfying the girth condition, the graph6-string of this lift is printed to stdout. Note that the program does not perform isomorphism rejection, so there can be isomorphic graphs in the output.
 
 
 
