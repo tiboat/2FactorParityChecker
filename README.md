@@ -1,6 +1,6 @@
 # 2-factor parity checker
 
-This repository contains code and data related to the manuscript "TODO". This code allows to check cubic bipartite graphs on being pseudo 2-factor isomorphic or 2-factor hamiltonian. It also contains code to generate all lifts of the Gray graph using the group $(\mathbb{Z}_3, +)$ and all lifts of the Theta graph using the group $(\mathbb{Z}_{15}, +)$ in the directory `genLifts`.
+This repository contains code and data related to the manuscript "Marién Abreu, Jan Goedgebeur, Jorik Jooken, Federico Romaniello, Tibo Van den Eede, The Gray graph is pseudo 2-factor isomorphic, manuscript.". This code allows to check cubic bipartite graphs on being pseudo 2-factor isomorphic or 2-factor hamiltonian. It also contains code to generate all lifts of the Gray graph using the group $`(\mathbb{Z}_3, +)`$ and all lifts of the Theta graph using the group $(\mathbb{Z}_{15}, +)$ in the directory `genLifts`.
 
 ## Data
 
@@ -113,7 +113,7 @@ To obtain the lifts of the Theta graph of girth at least 6 (for instance), run t
 ./genAllLiftsThetaExecutable 6 < groupZ3.txt
 ```
 
-The files `groupZ3.txt` and `groupZ15.txt` contain data of the groups $(\mathbb{Z}_3, +)$ and $(\mathbb{Z}_{15}, +)$, respectively. For each lift found, satisfying the girth condition, an adjacency matrix is printed to stdout. Note that the program does not perform isomorphism rejection, so there can be isomorphic graphs in the output.
+The files `groupZ3.txt` and `groupZ15.txt` contain data of the groups $`(\mathbb{Z}_3, +)`$ and $(\mathbb{Z}_{15}, +)$, respectively. For each lift found, satisfying the girth condition, an adjacency matrix is printed to stdout. Note that the program does not perform isomorphism rejection, so there can be isomorphic graphs in the output.
 
 ***
 
